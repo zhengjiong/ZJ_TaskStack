@@ -17,6 +17,10 @@
         <activity android:name=".cleartask.AActivity"/>
         <activity android:name=".cleartask.BActivity"/>
         <activity android:name=".cleartask.CActivity"/>
+
+        <activity android:name=".cleartop.AActivity"/>
+        <activity android:name=".cleartop.BActivity"/>
+        <activity android:name=".cleartop.CActivity"/>
     </application>
 
 </manifest>
