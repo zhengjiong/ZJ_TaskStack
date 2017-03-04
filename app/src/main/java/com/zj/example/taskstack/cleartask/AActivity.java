@@ -27,4 +27,10 @@ public class AActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("AActivity onDestroy");
+    }
 }

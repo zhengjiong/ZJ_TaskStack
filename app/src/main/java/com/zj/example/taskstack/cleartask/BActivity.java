@@ -18,20 +18,26 @@ public class BActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("BActivity onCreate");
         setContentView(R.layout.test_layout);
         ((TextView) findViewById(R.id.textview)).setText("BActivity");
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /**
-                 * FLAG_ACTIVITY_CLEAR_TASK必须和FLAG_ACTIVITY_NEW_TASK一起使用,
-                 * 才能达到清除task中所有activity的效果
-                 */
                 Intent intent = new Intent(BActivity.this, CActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("BActivity onDestroy");
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        System.out.println("BActivity onNewIntent");
     }
 }
