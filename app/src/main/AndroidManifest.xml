@@ -10,8 +10,31 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" /><!--Android Application的入口，每个Android应用必须且只能包含一个此类型的Action声明。　-->
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/><!--系统根据不同的Data类型，通过已注册的对应Application显示数据。-->
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="task.zj.com1"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="task.zj.com2"/>
+                <category android:name="android.intent.category.BROWSABLE"/><!--只能通过浏览器启动-->
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="www.zj.com" android:scheme="task" android:path="/stack.do" android:port="99"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="www.zj.com" android:scheme="task" android:pathPrefix="/zj.do" android:port="99"/>
             </intent-filter>
         </activity>
         <activity android:name=".cleartask.AActivity"/>
